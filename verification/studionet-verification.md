@@ -53,4 +53,4 @@ This proves the architectural boundary: validator consensus selected a verified 
 
 ## Adversarial coverage
 
-Direct Mode `12/12` tests cover digest mismatch, unverified-candidate exclusion, malformed/out-of-vocabulary semantic output, wrong roles, invalid transition order, route replay, version-history preservation and permissionless overdue escalation. These failure paths preserve protected state and require no deployment-account participation.
+Direct Mode `44/44` tests cover GitHub failures, immutable Git metadata mismatches, malformed/out-of-vocabulary semantic output, prompt injection, wrong roles, invalid transition order, terminal-state replay, version-history preservation, input boundaries and permissionless overdue escalation. See the [adversarial test matrix](adversarial-test-matrix.md). These failure paths preserve protected state and require no deployment-account participation.

@@ -30,7 +30,7 @@ npm install
 npm run build
 ```
 
-Current result: `12 passed`; production frontend build passed.
+Current result: `44 passed`; production frontend build passed.
 
 See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [deployment plan](docs/DEPLOYMENT.md), and [fixture manifest](verification/fixture-manifest.md).
 
@@ -45,4 +45,4 @@ The four synthetic runbooks are pinned to commit `f3107082d3c1e0ab2198338b6dc79f
 - Deployed/local source SHA-256: `852eae81df1471cc052212ccd068c1b37a58abef0bfc625bab88f434d7d1a1c0`
 - Live lifecycle: four verified runbooks → matched incident route → responder acknowledgement → mitigation → reporter-confirmed resolution.
 
-See [StudioNet verification](verification/studionet-verification.md) for transaction links and final authoritative state.
+See [StudioNet verification](verification/studionet-verification.md) for transaction links and final authoritative state, and the [adversarial test matrix](verification/adversarial-test-matrix.md) for failure-path coverage and its explicit limitation.
