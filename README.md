@@ -33,3 +33,7 @@ npm run build
 Current result: `12 passed`; production frontend build passed.
 
 See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [deployment plan](docs/DEPLOYMENT.md), and [fixture manifest](verification/fixture-manifest.md).
+
+## Immutable test source
+
+The four synthetic runbooks are pinned to commit `f3107082d3c1e0ab2198338b6dc79f9a2efec22a`. Their public raw responses were fetched after push and independently matched the recorded byte lengths and SHA-256 commitments.

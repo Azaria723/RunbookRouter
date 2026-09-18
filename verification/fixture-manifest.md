@@ -2,6 +2,10 @@
 
 All resources are synthetic operational examples maintained inside this repository. They do not describe a real incident.
 
+- Repository: `Azaria723/RunbookRouter`
+- Immutable fixture commit: `f3107082d3c1e0ab2198338b6dc79f9a2efec22a`
+- Retrieval result: all four immutable raw resources returned HTTP `200`; fetched byte lengths and recomputed SHA-256 values matched this manifest.
+
 | Resource | Canonical path | Bytes | SHA-256 | Expected route |
 |---|---|---:|---|---|
 | Bridge withdrawal | `/evidence/runbooks/bridge-withdrawal.md` | 292 | `bbb1f4fd5cc1d7e2d52f31abdc4b12c3dbbe1d0a9d57b8ee56c13ecffecfc96f` | `WITHDRAWAL_DEGRADATION` / `pause-outbound-queue` |
@@ -9,4 +13,4 @@ All resources are synthetic operational examples maintained inside this reposito
 | Oracle stale price | `/evidence/runbooks/oracle-stale.md` | 315 | `dbac45d53679abc272ea4b26f37eb1f7902866b35d406372ab1c157f22b6e83f` | `ORACLE_STALE` / `freeze-price-dependent-actions` |
 | Frontend degradation | `/evidence/runbooks/frontend-degradation.md` | 298 | `0fa305ca4645f7d4f15363e54d28c50d4f8b4c6def5b20ae11e0e3f277fd924f` | `FRONTEND_DEGRADATION` / `activate-static-status-page` |
 
-The immutable Git commit is filled only after the repository is pushed. At runtime the contract independently verifies commit identity, complete tree, blob metadata, Git SHA-1 and fetched-byte SHA-256.
+At runtime the contract independently verifies commit identity, complete tree, blob metadata, Git SHA-1 and fetched-byte SHA-256.

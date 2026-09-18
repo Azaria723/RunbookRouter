@@ -9,3 +9,4 @@
 - Liveness coverage: a missed acknowledgement deadline enables permissionless escalation and prevents late acknowledgement.
 - Revision coverage: successor publication deactivates the former routing candidate while preserving historical state.
 - Originality check: no ballot, quorum, council, escrow, two-document comparison, registry-consumption or snapshot-journal architecture.
+- Immutable-source preflight: commit `f3107082d3c1e0ab2198338b6dc79f9a2efec22a`; all four GitHub raw fixtures returned HTTP `200` with exact byte-length and SHA-256 parity.
