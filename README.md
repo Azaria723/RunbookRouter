@@ -30,6 +30,6 @@ npm install
 npm run build
 ```
 
-Current result: `10 passed`; production frontend build passed.
+Current result: `12 passed`; production frontend build passed.
 
 See [architecture](docs/ARCHITECTURE.md), [threat model](docs/THREAT_MODEL.md), [deployment plan](docs/DEPLOYMENT.md), and [fixture manifest](verification/fixture-manifest.md).

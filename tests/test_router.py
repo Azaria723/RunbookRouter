@@ -1,6 +1,7 @@
 import hashlib
 import json
 import time
+from datetime import datetime, timezone
 import pytest
 
 pytestmark = pytest.mark.filterwarnings("ignore:Web mock never matched")
@@ -89,6 +90,25 @@ def test_runbook_revision_preserves_history(direct_vm, direct_deploy, direct_ali
     assert json.loads(c.get_version(0))["active"] == 0
     assert json.loads(c.get_version(2))["revision"] == 2
     assert json.loads(c.get_service(0))["latest_versions"] == [1, 2]
+
+def test_manual_triage_and_route_replay_are_terminal(direct_vm, direct_deploy, direct_alice, direct_bob, direct_charlie):
+    c = deploy(direct_vm, direct_deploy, direct_alice); setup(direct_vm, c, direct_alice, direct_bob); open_incident(direct_vm, c, direct_charlie); mock_catalog(direct_vm)
+    direct_vm.mock_llm(r"Route an incident.*", json.dumps({"status":"MANUAL_TRIAGE"}))
+    assert c.route_incident(0) == "MANUAL_TRIAGE"
+    before = c.get_incident(0)
+    assert c.route_incident(0) == "INCIDENT_NOT_OPEN"
+    assert c.get_incident(0) == before
+
+def test_overdue_route_can_be_escalated_without_responder(direct_vm, direct_deploy, direct_alice, direct_bob, direct_charlie):
+    c = deploy(direct_vm, direct_deploy, direct_alice); setup(direct_vm, c, direct_alice, direct_bob); open_incident(direct_vm, c, direct_charlie); mock_catalog(direct_vm)
+    direct_vm.mock_llm(r"Route an incident.*", routed_output())
+    assert c.route_incident(0) == "ROUTED"
+    deadline = incident(c)["ack_deadline"]
+    assert c.escalate_overdue(0) == "NOT_OVERDUE"
+    direct_vm.warp(datetime.fromtimestamp(deadline + 1, timezone.utc).isoformat())
+    with direct_vm.prank(direct_charlie): assert c.escalate_overdue(0) == "ESCALATED"
+    assert incident(c)["status"] == "ESCALATED"
+    with direct_vm.prank(direct_bob): assert c.acknowledge(0) == "INCIDENT_NOT_ROUTED"
 
 def test_invalid_inputs_preserve_counts(direct_vm, direct_deploy, direct_alice, direct_bob):
     c = deploy(direct_vm, direct_deploy, direct_alice)
