@@ -2,6 +2,8 @@
 
 RunbookRouter is a GenLayer intelligent-contract dApp for evidence-bound incident dispatch. Validators verify a bounded catalog of immutable operational runbooks and semantically route an incident to the best matching response procedure. Deterministic roles then govern acknowledgement, mitigation and resolution.
 
+Live application: [runbook-router.pages.dev](https://runbook-router.pages.dev)
+
 ## Why GenLayer
 
 Symptom reports rarely match runbook titles word-for-word. `route_incident` uses comparative validator consensus to select among verified candidates, while the contract constrains every selected class, severity and action to the chosen runbook's registered vocabulary. If no source is verifiable, no candidate materially matches, or model output leaves the vocabulary, the incident fails safely to `MANUAL_TRIAGE`.
@@ -40,6 +42,7 @@ The four synthetic runbooks are pinned to commit `f3107082d3c1e0ab2198338b6dc79f
 
 ## Verified StudioNet deployment
 
+- Frontend: [https://runbook-router.pages.dev](https://runbook-router.pages.dev)
 - Contract: [`0x842cd47793b3A0dB2B72cf569DB7344071968fA1`](https://explorer-studio.genlayer.com/address/0x842cd47793b3A0dB2B72cf569DB7344071968fA1)
 - Chain ID: `61999`
 - Deployed/local source SHA-256: `852eae81df1471cc052212ccd068c1b37a58abef0bfc625bab88f434d7d1a1c0`

@@ -1,0 +1,7 @@
+footer{align-items:center}
+footer p{margin:8px 0 0}
+footer nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+footer nav a{display:flex;align-items:center;gap:6px;padding:9px 11px;border:1px solid var(--line);background:#0c1119;color:#9da8bb;text-decoration:none}
+footer nav a:hover{border-color:#465675;color:#e6ebf5}
+footer nav svg{width:13px;height:13px;color:var(--cyan)}
+@media(max-width:760px){footer nav{justify-content:flex-start}}
