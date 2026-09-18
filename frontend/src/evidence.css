@@ -4,5 +4,6 @@ footer nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 footer nav a{display:flex;align-items:center;gap:6px;padding:9px 11px;border:1px solid var(--line);background:#0c1119;color:#9da8bb;text-decoration:none}
 footer nav a:hover{border-color:#465675;color:#e6ebf5}
 footer nav svg{width:13px;height:13px;color:var(--cyan)}
+.section-kicker{display:block;margin-bottom:18px;color:#748098;font:500 10px DM Mono;letter-spacing:.16em}
 @media(min-width:1101px){.dispatch{grid-template-columns:280px minmax(420px,1fr) 440px}.commands form{padding:26px 28px;max-height:680px}.commands .panel-title{height:92px;padding:22px 28px}.commands .panel-title h2{font-size:22px}.commands .tabs{padding:15px 24px;gap:9px}.commands .tabs button{font-size:12px;padding:10px 15px}.commands label{font-size:12px;gap:9px;margin-bottom:17px;letter-spacing:.025em}.commands input,.commands textarea{font-size:14px;line-height:1.45;padding:14px 15px}.commands input{min-height:50px}.commands textarea{min-height:112px}.commands .primary{min-height:52px;font-size:15px;margin-top:5px}.commands .two{gap:13px}}
 @media(max-width:760px){footer nav{justify-content:flex-start}}
